@@ -5,19 +5,19 @@
 
 :root{
   /* surfaces */
-  --cream:      #EEE7DC;   /* page / hero background          */
-  --khaki:      transparent;   /* about section background        */
+  --cream:      #EEE7DA;   /* page / hero background          */
+  --khaki:      #D1CDB5;   /* about section background        */
   --pill:       #D5CDB8;   /* nav pill fill                   */
-  --sage:       transparent;   /* courses section background      */
+  --sage:       #9B9C7C;   /* courses section background      */
   --card-ivory: rgba(238,231,218,.72);
   --card-dark:  rgba(45,58,30,.42);
 
   /* ink */
   --ink:    #615839;       /* wordmark, taglines, nav text    */
-  --deep:   #615839;       /* about copy                      */
-  --leaf:   #615839;       /* service labels, card items      */
-  --gold:   #615839;       /* accents                         */
-  --muted:  #615839;
+  --deep:   #263F31;       /* about copy                      */
+  --leaf:   #435B2D;       /* service labels, card items      */
+  --gold:   #A77A21;       /* accents                         */
+  --muted:  #7C825E;
 
   /* proportions taken from the reference */
   --shell:  1130px;
@@ -488,76 +488,3 @@ ul{ margin:0; padding:0; list-style:none; }
   }
   .reveal{ opacity:1 !important; transform:none !important; }
 }
-
-/* =================== V2 OVERRIDES =================== */
-body{
-  background:#EEE7DC url('assets/pattern.png') center top/760px auto repeat;
-  font-size:1.06rem; font-weight:400; line-height:1.9;
-}
-.hero,.about,.services,.courses,.contact{ background:transparent !important; }
-.courses::before{ display:none; }
-.site-header{ background:#EEE7DC; }
-.display-title,.display-title--light{
-  font-family:'Cairo','Changa',sans-serif; font-weight:900;
-  font-size:clamp(2.6rem,7vw,4.6rem); color:var(--ink);
-  -webkit-text-stroke:0; letter-spacing:0;
-}
-.hero-ar{ font-weight:700; }
-.pillar h3,.hero-title{ font-weight:700; }
-.pillar p,.about-lead{ font-weight:700; color:var(--ink); }
-.svc h3{ font-family:'Cairo',sans-serif; font-weight:800; font-size:clamp(1rem,1.9vw,1.35rem); color:var(--ink); }
-.contact-headline{ font-weight:800; color:var(--ink); }
-.contact-copy{ font-size:.72rem; }
-
-/* courses: 4 arch cards */
-.courses-grid{ grid-template-columns:repeat(4,1fr); gap:clamp(1rem,2.2vw,1.8rem); }
-.course{ position:relative; }
-.course-card{
-  background:#F7F2E8; border:2px solid var(--ink);
-  border-radius:120px 120px 14px 14px;
-  padding:clamp(4.4rem,7vw,5.6rem) 1rem 1.4rem;
-  min-height:300px; display:flex; flex-direction:column; align-items:center; gap:1.2rem;
-}
-.course-title{
-  font-family:'Cairo',sans-serif; font-weight:900;
-  font-size:clamp(1.15rem,2vw,1.55rem); line-height:1.5; color:var(--ink); margin:0;
-}
-.course-go{
-  margin-top:auto; display:inline-flex; align-items:center; gap:.6rem;
-  background:var(--ink); color:#F7F2E8; font-weight:800; font-size:1rem;
-  padding:.55rem 1.3rem; border-radius:999px;
-  transition:transform .35s var(--ease), background .35s var(--ease);
-}
-.course-go::after{ content:''; position:absolute; inset:0; }
-.course:hover .course-go{ transform:translateX(-4px); background:#3F3922; }
-.course-go svg{ width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
-
-/* course detail pages */
-.cpage{ padding:clamp(2rem,5vw,3.5rem) 0 clamp(3rem,6vw,5rem); }
-.cpage .back{ display:inline-block; font-weight:800; margin-bottom:1.4rem; border-bottom:2px solid var(--ink); }
-.cpage h1{ font-family:'Cairo',sans-serif; font-weight:900; font-size:clamp(2rem,5.2vw,3.4rem); line-height:1.4; margin:0 0 1rem; color:var(--ink); }
-.cpage .lead{ font-size:clamp(1.05rem,2vw,1.3rem); font-weight:700; max-width:62ch; margin:0 0 2rem; }
-.facts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1rem; margin-bottom:2rem; }
-.fact{ background:#F7F2E8; border:2px solid var(--ink); border-radius:14px; padding:1rem 1.2rem; }
-.fact b{ display:block; font-family:'Cairo',sans-serif; font-weight:900; font-size:1.1rem; }
-.cpage h2{ font-family:'Cairo',sans-serif; font-weight:900; font-size:clamp(1.4rem,3vw,2rem); margin:2rem 0 .8rem; }
-.cpage ul.learn{ display:grid; gap:.5rem; }
-.cpage ul.learn li{ font-weight:700; font-size:1.1rem; padding-inline-start:1.6rem; position:relative; }
-.cpage ul.learn li::before{ content:''; position:absolute; inset-inline-start:0; top:.7em; width:.7rem; height:.7rem; border:2px solid var(--ink); border-radius:50%; }
-.reg-btn{
-  display:inline-block; margin-top:2.2rem; background:var(--ink); color:#F7F2E8;
-  font-family:'Cairo',sans-serif; font-weight:900; font-size:1.25rem;
-  padding:.9rem 2.6rem; border-radius:999px; transition:transform .35s var(--ease), background .35s var(--ease);
-}
-.reg-btn:hover{ transform:translateY(-3px); background:#3F3922; }
-
-@media (max-width:1024px){ .courses-grid{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px){
-  body{ background-size:520px auto; font-size:1.02rem; }
-  .courses-grid{ grid-template-columns:1fr; max-width:380px; margin-inline:auto; }
-}
-
-.desc{ max-width:64ch; }
-.desc p{ margin:0 0 1.1rem; font-size:clamp(1.08rem,1.9vw,1.25rem); font-weight:400; line-height:2; }
-.desc p.open{ font-family:'Cairo',sans-serif; font-weight:800; font-size:clamp(1.3rem,2.6vw,1.8rem); line-height:1.7; }
-.desc p.punch{ font-family:'Cairo',sans-serif; font-weight:900; font-size:clamp(1.15rem,2.2vw,1.45rem); margin-bottom:.2rem; }
