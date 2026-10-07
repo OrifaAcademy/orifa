@@ -4,6 +4,10 @@
 (function () {
   'use strict';
 
+  /* رابط استبيان التسجيل — غيّريه هنا مرة واحدة فيتحدّث في كل صفحات الدورات */
+  var SURVEY_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd9KF2QDdxMgtG4b88ynbZ7R0aL4TaF2eHy8RZ2YjizJ02j8w/viewform';
+  document.querySelectorAll('[data-register]').forEach(function (a) { a.href = SURVEY_URL; a.target = '_blank'; a.rel = 'noopener'; });
+
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- scroll reveal ---------- */
